@@ -4,35 +4,42 @@
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <meta http-equiv="X-UA-Compatible" content="ie=edge">
-          <title></title>
+          <title>Registro</title>
+          <link rel="stylesheet" href="assets/css/main.css">
     </head>
     <body>
+        <div id="ventanaRegistro">
         <h1>Registro</h1>
-        <form id="registroCoder">
-          <label>Nombre:</label>
-          <br>
-          <input type="text" id="nombre" class="input-registro" placeholder="Ingresa tu Nombre" >
-          <br>
-          <span class="indicacionLetras"></span>
-          <br>
-          <label>Apellido </label>
-          <br>
-          <input type="text" id="apellido" class="input-registro" placeholder="Ingresa tu Apellido"/>
-          <br>
-          <span class="indicacionLetras"></span>
-          <br>
-          <label>Correo:</label>
-          <br>
-          <input type="text" id="correo" class="input-registro" placeholder="Correo" >
-          <br>
-          <span class="indicacionCorreo"></span>
-          <br>
-          <label>Contraseña</label>
-          <br>
-          <input type="text" id="pasword" class="input-registro" placeholder="Password"/>
-          <br>
-          <span class="indicacionMax"></span>
-          <br>
-        </form>
+            <form id="registroCoder">
+              <label>Nombre:</label>
+              <br>
+              <input type="text" id="nombre" class="datoRegistro" placeholder="Ingresa tu Nombre" >
+              <br>
+              <span class="indicacionLetras"></span>
+              <br>
+              <label>Apellido </label>
+              <br>
+              <input type="text" id="apellido" class="datoRegistro" placeholder="Ingresa tu Apellido"/>
+              <br>
+              <span class="indicacionLetras"></span>
+              <br>
+              <label>Correo:</label>
+              <br>
+              <input type="text" id="correo" class="datoRegistro" placeholder="Correo" >
+              <br>
+              <span class="indicacionCorreo"></span>
+              <br>
+              <label>Contraseña</label>
+              <br>
+              <input type="text" id="contraseña" class="datoRegistro" placeholder="Password"/>
+              <br>
+              <span class="indicacionMax"></span>
+              <br>
+              <button type="submit" id="guardarRegistro">Login</input></button>
+              <br>
+              <label id="mensajeError"></label>
+            </form>
+        </div>
+        <script type="text/javascript" src="assets/js/registro.js"></script>
     </body>
 </html>
