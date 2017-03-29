@@ -1,18 +1,25 @@
 
   window.addEventListener('load',function(e) {
 
-    var baseDatos=[];
-    var nombre=document.getElementById("nombre");
-    var apellido=document.getElementById("apellido");
-    var correo=document.getElementById("correo");
-    var contraseña=document.getElementById("contraseña");
+    var nombre = document.getElementById("nombre");
+  	var apellido = document.getElementById("apellido");
+  	var correo = document.getElementById("correo");
+  	var contraseña = document.getElementById("contraseña");
 
-    function alldatos(nombre,apellido,correo,contraseña){
-          this.nombre=nombre;
-          this.apellido=apellido;
-          this.correo=correo;
-          this.contraseña=contraseña;
-    };
+  	var objetoCoder = JSON.parse(localStorage.getItem("nuevoCoder"));
+    var baseDatos=JSON.parse(localStorage.getItem("baseDatosGeneral"));
+    nombre.value=objetoCoder.nombre;
+  	apellido.value=objetoCoder.apellido;
+  	correo.value=objetoCoder.correo;
+  	contraseña.value=objetoCoder.contraseña;
+
+  	function Coder(nombreCoder, apellidoCoder, correoCoder, contraseñaCoder) {
+  		this.nombre = nombreCoder;
+  		this.apellido = apellidoCoder;
+  		this.correo = correoCoder;
+  		this.contraseña = contraseñaCoder;
+
+  	};
 
 //VALIDACION DE LETRAS
     var validarLetras=function(e){
@@ -32,8 +39,8 @@
     apellido.onkeypress=validarLetras;
     console.log(nombre.value);
   //
-    var datosRegistro=document.getElementsByClassName("datoRegistro");
-    console.log(datosRegistro);
+    var datosEdicion=document.getElementsByClassName("datoEditado");
+    console.log(datosEdicion);
     var validacionDato=function(){
           if(this.value.trim().length==0){
                 this.value="";
@@ -43,11 +50,11 @@
                 this.nextElementSibling.nextElementSibling.innerText="";
             }
        }
-    for(var i=0;i<datosRegistro.length;i++){
-        datosRegistro[i].onblur=validacionDato;
+    for(var i=0;i<datosEdicion.length;i++){
+        datosEdicion[i].onblur=validacionDato;
     }
 
-    guardarRegistro.addEventListener('click',function(e) {
+    guardarCambio.addEventListener('click',function(e) {
       e.preventDefault();
       //VALIDAR TODOS LOS CAMPOS
           if (nombre.value == "" || apellido.value == "" || correo.value == "" || contraseña.value == ""){
@@ -56,14 +63,14 @@
           else{
               document.getElementById("mensajeError").innerHTML="";
       //ALMACENO TODOS MIS CODERS
-              var coder=new alldatos (nombre.value,apellido.value,correo.value,contraseña.value);
-              baseDatos.push(coder);
+            var coder=new Coder (nombre.value,apellido.value,correo.value,contraseña.value);
+            baseDatos.push(coder);
 
-              localStorage.setItem("nuevoCoder",JSON.stringify(coder));
-              localStorage.setItem("baseDatosGeneral",JSON.stringify(baseDatos));
+            localStorage.setItem("nuevoCoder",JSON.stringify(coder));
+            localStorage.setItem("baseDatosGeneral",JSON.stringify(baseDatos));
       //MUESTRO TODOS MIS CODERS
-              console.log(baseDatos);
-              document.getElementById("registroCoder").reset();
+            //  console.log(baseDatos);
+            //document.getElementById("edicionCoder").reset();
               window.location="mostrar.html";
           }
 
