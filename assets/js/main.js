@@ -1,10 +1,13 @@
 var cantidad=0;
-var datos=[];
+
 window.addEventListener("load",function () {
-  document.getElementById("registro").addEventListener("click",function(){
-    window.location="registro.html";
+      var baseDatos=[{"nombre":"grecia","apellido":"rayme","correo":"grecia.rapu@lab.la","contraseña":"1234567"}];
+
+      localStorage.setItem("baseDatosGeneral",JSON.stringify(baseDatos));
+      document.getElementById("registro").addEventListener("click",function(){
+      window.location="registro.html";
   })
-  document.getElementById("iniciarSesion").addEventListener("click",function(){
-    window.location="iniciarsesion.html";
+      document.getElementById("iniciarSesion").addEventListener("click",function(){
+      window.location="iniciarsesion.html";
   })
 });

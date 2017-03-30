@@ -8,6 +8,8 @@
 
   	var objetoCoder = JSON.parse(localStorage.getItem("nuevoCoder"));
     var baseDatos=JSON.parse(localStorage.getItem("baseDatosGeneral"));
+    baseDatos.pop();
+    localStorage.setItem("baseDatosGeneral",JSON.stringify(baseDatos));
     nombre.value=objetoCoder.nombre;
   	apellido.value=objetoCoder.apellido;
   	correo.value=objetoCoder.correo;
@@ -63,11 +65,12 @@
           else{
               document.getElementById("mensajeError").innerHTML="";
       //ALMACENO TODOS MIS CODERS
+            //console.log(baseDatos);
             var coder=new Coder (nombre.value,apellido.value,correo.value,contraseña.value);
-            baseDatos.push(coder);
+        //    baseDatos.push(coder);
 
             localStorage.setItem("nuevoCoder",JSON.stringify(coder));
-            localStorage.setItem("baseDatosGeneral",JSON.stringify(baseDatos));
+
       //MUESTRO TODOS MIS CODERS
             //  console.log(baseDatos);
             //document.getElementById("edicionCoder").reset();
