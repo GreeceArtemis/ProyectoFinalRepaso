@@ -13,21 +13,24 @@
             <form id="iniciarSesion">
               <label>Correo:</label>
               <br>
-              <input type="text" id="correo" class="datoInicio" placeholder="Correo" >
+              <input type="email" id="correo" class="datoInicio" placeholder="Correo" required>
               <br>
               <span class="indicacionCorreo"></span>
               <br>
               <label>Contraseña</label>
               <br>
-              <input type="text" id="contraseña" class="datoInicio" placeholder="Password"/>
+              <input type="password" id="contraseña" class="datoInicio" placeholder="Password"/>
               <br>
-              <span class="indicacionMax"></span>
+              <span id="contraseñaV" class="indicacionMax"></span>
               <br>
-              <button type="submit" id="guardarRegistro">Iniciar Sesión</input></button>
+              <button type="button" id="guardarRegistro">Iniciar Sesión</input></button>
+              <br>
+              <button type="button" id="registrado">Si Estoy Registrado</input></button>
+              <button type="button" id="registrate">Regístrate</input></button>
               <br>
               <label id="mensajeError"></label>
             </form>
         </div>
-        <script type="text/javascript" src="assets/js/registro.js"></script>
+        <script type="text/javascript" src="assets/js/sesion.js"></script>
     </body>
 </html>

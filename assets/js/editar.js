@@ -59,10 +59,12 @@
     guardarCambio.addEventListener('click',function(e) {
       e.preventDefault();
       //VALIDAR TODOS LOS CAMPOS
-          if (nombre.value == "" || apellido.value == "" || correo.value == "" || contraseña.value == ""){
-              document.getElementById("mensajeError").innerHTML="OBLIGATORIO LLENAR EL FORMULARIO"  ;
-          }
-          else{
+            if (nombre.value == "" || apellido.value == "" || correo.value == "" || contraseña.value == ""){
+                document.getElementById("mensajeError").innerHTML="OBLIGATORIO LLENAR EL FORMULARIO"  ;}
+                if(contraseña.value.length<6|| contraseña.value.length>20){
+                document.getElementById("contraseñaV").innerHTML="MIN 6 & MAX 20"  ;
+            }
+            else{
               document.getElementById("mensajeError").innerHTML="";
       //ALMACENO TODOS MIS CODERS
             //console.log(baseDatos);
